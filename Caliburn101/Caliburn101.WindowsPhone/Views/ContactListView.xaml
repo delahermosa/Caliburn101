@@ -9,10 +9,10 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
     
-    <Button HorizontalAlignment="Stretch" x:Name="Navigate">        
-        <TextBlock>
-            <Run x:Name="Forename" />
-            <Run x:Name="Surname" />
-        </TextBlock>
-    </Button>
+    <Grid HorizontalAlignment="Stretch">        
+        <StackPanel>
+            <TextBlock x:Name="Forename" />
+            <TextBlock x:Name="Surname" />
+        </StackPanel>
+    </Grid>
 </UserControl>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Windows.UI.Xaml.Controls;
 
 namespace Caliburn101.ViewModels
 {
@@ -44,7 +45,13 @@ namespace Caliburn101.ViewModels
         protected override void OnInitialize()
         {
             base.OnInitialize();
-            Contact = _contactsService.GetContacts().Select(c => new ContactListViewModel(c, _navigationService));
+            Contact = _contactsService.GetContacts().Select(c => new ContactListViewModel(c));
+        }
+
+        public void Navigate(ItemClickEventArgs args)
+        {
+            var contact = args.ClickedItem as ContactListViewModel;
+            _navigationService.NavigateToViewModel<ContactDetailViewModel>(contact.Id);
         }
     }
 }

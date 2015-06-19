@@ -5,10 +5,12 @@
     xmlns:local="using:Caliburn101"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:micro="using:Caliburn.Micro"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
-        <ListView x:Name="Contact" />
+        <ListView x:Name="Contact" SelectionMode="None" IsItemClickEnabled="True"
+                  micro:Message.Attach="[Event ItemClick] = [Action Navigate($eventArgs)]"/>
     </Grid>
     
 </Page>

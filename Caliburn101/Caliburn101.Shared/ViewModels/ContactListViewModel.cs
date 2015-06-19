@@ -14,18 +14,11 @@ namespace Caliburn101.ViewModels
         public string Forename { get; private set; }
         public string Surname { get; private set; }
 
-        public ContactListViewModel(ContactModel model, INavigationService navigationService)
+        public ContactListViewModel(ContactModel model)
         {
             Id = model.Id;
             Forename = model.Forename;
-            Surname = model.Surname;
-
-            _navigationService = navigationService;
-        }
-
-        public void Navigate()
-        {
-            _navigationService.NavigateToViewModel<ContactDetailViewModel>(Id);
-        }
+            Surname = model.Surname;         
+        }       
     }
 }

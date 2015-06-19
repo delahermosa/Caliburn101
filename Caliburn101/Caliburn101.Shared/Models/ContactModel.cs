@@ -14,7 +14,7 @@ namespace Caliburn101.Models
 
         public ContactModel(string forename, string surname, string address, string phonenumber)
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             Forename = forename;
             Surname = surname;
             PhoneNumber = phonenumber;
