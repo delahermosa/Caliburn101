@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
 using Caliburn101.Services;
 using Caliburn101.ViewModels;
+using Caliburn101.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -38,7 +39,7 @@ namespace Caliburn101
         protected override void Configure()
         {
             _container = new WinRTContainer();
-            _container.RegisterWinRTServices();
+            _container.RegisterWinRTServices();          
 
             _container.PerRequest<MainPageViewModel>();
             _container.PerRequest<ContactDetailViewModel>();
@@ -47,7 +48,7 @@ namespace Caliburn101
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
-            DisplayRootViewFor<MainPageViewModel>();
+            DisplayRootView<MainPageView>();
         }
 
         protected override object GetInstance(Type service, string key)
@@ -64,5 +65,11 @@ namespace Caliburn101
         {
             _container.BuildUp(instance);
         }
+
+        protected override void PrepareViewFirst(Frame rootFrame)
+        {
+            _container.RegisterNavigationService(rootFrame);
+        }
+       
     }
 }

@@ -9,13 +9,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
-        <TextBlock Text="Forename" Style="{StaticResource HeaderTextBlockStyle}" />
+        <TextBlock Text="Forename" Style="{StaticResource TitleTextBlockStyle}" />
         <TextBox x:Name="Forename" />
-        <TextBlock Text="Surname" Style="{StaticResource HeaderTextBlockStyle}" />
+        <TextBlock Text="Surname" Style="{StaticResource TitleTextBlockStyle}" />
         <TextBox x:Name="Surname" />
-        <TextBlock Text="PhoneNumber" Style="{StaticResource HeaderTextBlockStyle}" />
+        <TextBlock Text="PhoneNumber" Style="{StaticResource TitleTextBlockStyle}" />
         <TextBox x:Name="PhoneNumber" />
-        <TextBlock Text="Address" Style="{StaticResource HeaderTextBlockStyle}" />
+        <TextBlock Text="Address" Style="{StaticResource TitleTextBlockStyle}" />
         <TextBox x:Name="Address" />
     </StackPanel>
 </Page>
