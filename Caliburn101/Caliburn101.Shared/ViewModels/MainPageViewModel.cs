@@ -42,9 +42,9 @@ namespace Caliburn101.ViewModels
             _navigationService = navigationService;
         }
 
-        protected override void OnInitialize()
+        protected override void OnActivate()
         {
-            base.OnInitialize();
+            base.OnActivate();
             Contact = _contactsService.GetContacts().Select(c => new ContactListViewModel(c));
         }
 
@@ -52,6 +52,11 @@ namespace Caliburn101.ViewModels
         {
             var contact = args.ClickedItem as ContactListViewModel;
             _navigationService.NavigateToViewModel<ContactDetailViewModel>(contact.Id);
+        }
+
+        public void Add()
+        {
+            _navigationService.NavigateToViewModel<ContactDetailViewModel>(Guid.Empty);
         }
     }
 }

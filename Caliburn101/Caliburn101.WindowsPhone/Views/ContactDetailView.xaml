@@ -18,4 +18,15 @@
         <TextBlock Text="Address" Style="{StaticResource TitleTextBlockStyle}" />
         <TextBox x:Name="Address" />
     </StackPanel>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Save" Label="Save"
+                         x:Name="Save" />
+                <AppBarButton Icon="Delete" Label="Delete"
+                         x:Name="Delete" />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

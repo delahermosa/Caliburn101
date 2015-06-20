@@ -9,5 +9,8 @@ namespace Caliburn101.Services
     {
         IEnumerable<ContactModel> GetContacts();
         ContactModel GetContact(Guid id);
+
+        void Save(Guid id, string forename, string surname, string address, string phoneNumber);
+        void Delete(Guid id);
     }
 }

@@ -74,13 +74,34 @@ namespace Caliburn101.ViewModels
         {
             var contact = _contactsService.GetContact(Parameter);
             if (contact == null)
-                _navigationService.GoBack();
+            {
+                _id = Guid.Empty;                
+            }
+            else
+            {
+                _id = contact.Id;
+                Forename = contact.Forename;
+                Surname = contact.Surname;
+                PhoneNumber = contact.PhoneNumber;
+                Address = contact.Address;
+            }
+        }
 
-            _id = contact.Id;
-            Forename = contact.Forename;
-            Surname = contact.Surname;
-            PhoneNumber = contact.PhoneNumber;
-            Address = contact.Address;
+        public void Save()
+        {
+            _contactsService.Save(_id, Forename, Surname, Address, PhoneNumber);
+            _navigationService.GoBack();
+        }
+
+        public void Delete()
+        {
+            _contactsService.Delete(_id);
+            _navigationService.GoBack();
+        }
+
+        public bool CanDelete()
+        {
+            return _id != Guid.Empty;
         }
     }
 }
