@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="Caliburn101.Views.ContactDetailView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Caliburn101.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <TextBlock Text="Forename" Style="{StaticResource TitleTextBlockStyle}" />
+        <TextBox x:Name="Forename" />
+        <TextBlock Text="Surname" Style="{StaticResource TitleTextBlockStyle}" />
+        <TextBox x:Name="Surname" />
+        <TextBlock Text="PhoneNumber" Style="{StaticResource TitleTextBlockStyle}" />
+        <TextBox x:Name="PhoneNumber" />
+        <TextBlock Text="Address" Style="{StaticResource TitleTextBlockStyle}" />
+        <TextBox x:Name="Address" />
+    </StackPanel>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Save" Label="Save"
+                         x:Name="Save" />
+                <AppBarButton Icon="Delete" Label="Delete"
+                         x:Name="Delete" />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
