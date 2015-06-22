@@ -14,8 +14,7 @@ namespace Caliburn101.ViewModels
         private readonly INavigationService _navigationService;
 
         private IEnumerable<ContactListViewModel> _contact;
-        private ContactListViewModel _selectedContact;
-
+        
         public IEnumerable<ContactListViewModel> Contact
         {
             get { return _contact; }
@@ -23,16 +22,6 @@ namespace Caliburn101.ViewModels
             {
                 _contact = value;
                 NotifyOfPropertyChange(() => Contact);
-            }
-        }
-
-        public ContactListViewModel SelectedContact
-        {
-            get { return _selectedContact; }
-            set
-            {
-                _selectedContact = value;
-                NotifyOfPropertyChange(() => SelectedContact);
             }
         }
 
