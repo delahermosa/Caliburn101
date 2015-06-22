@@ -58,5 +58,15 @@ namespace Caliburn101.ViewModels
         {
             _navigationService.NavigateToViewModel<ContactDetailViewModel>(Guid.Empty);
         }
+
+        public void Back()
+        {            
+            _navigationService.GoBack();
+        }
+
+        public bool CanBack()
+        {
+            return _navigationService.CanGoBack;
+        }
     }
 }

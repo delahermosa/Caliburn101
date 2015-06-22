@@ -103,5 +103,15 @@ namespace Caliburn101.ViewModels
         {
             return _id != Guid.Empty;
         }
+
+        public void Back()
+        {
+            _navigationService.GoBack();
+        }
+
+        public bool CanBack()
+        {
+            return _navigationService.CanGoBack;
+        }
     }
 }
